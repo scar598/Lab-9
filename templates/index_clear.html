@@ -12,6 +12,14 @@
         </div>
     </form>
 
+    {% if notes %}
+    <div class="clear-container">
+        <form action="/clear" method="GET">
+            <button type="submit" class="clear-btn">Clear - Очистить все заметки</button>
+        </form>
+    </div>
+    {% endif %}
+
     <div class="notes-list">
         {% for note in notes %}
         <div class="note {% if note.important %}important{% endif %}">
